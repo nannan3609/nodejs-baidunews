@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top {
+    width: 100%;
+    height: 30px;
+    background: rgb(81, 118, 160);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    margin-left: 10px;
+    width: 77px;
+}
+
+.navi {
+    color: rgb(255, 255, 255);
+    margin-left: 10%;
+}
+
+.logoout {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: -4%;
+    right: 3%;
+}
+
+#hello {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: -4%;
+    right: 8%;
+}
+
+.left {
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    left: 0;
+    top: 30px;
+    background: rgb(229, 229, 229);
+}
+
+.table-hover td:hover {
+    background-color: rgb(81, 118, 160);
+}
+
+span {
+    color: rgb(128, 128, 128);
+}
+
+.in {
+    background-color: rgb(81, 118, 160);
+}
+
+.on {
+    color: #fff;
+}
+
+span:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.right {
+    height: 100%;
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    top: 30px;
+    overflow: scroll;
+}
+
+.table-bordered {
+    width: 70%;
+    margin-left: 15%;
+    color: rgb(128, 128, 128);
+}
+
+.site {
+    margin-top: 15px;
+    margin-left: 35px;
+    color: rgb(128, 128, 128);
+}
+
+.index-list-main-title {
+    font-size: 16px;
+    line-height: 20px;
+    color: #262b31;
+    margin: -1px 0 4px 0;
+}
+
+.index-list-main-abs {
+    font-size: 13px;
+    line-height: 20px;
+    color: #b8bac0;
+    font-weight: 400;
+}
+
+/*标题*/
+.index-list-pic {
+    font-size: 0;
+    height: 68px;
+    vertical-align: middle;
+    width: 95px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    float: left;
+    margin-left: 0;
+    margin-right: 10px;
+    background-color: #F4F7F9;
+    position: relative;
+}
+
+.index-list-pic img {
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+/*图片*/
+.index-item {
+    position: relative;
+    border-bottom: 1px solid #f6f6f6;
+    overflow: hidden;
+    padding: 10px 0;
+    margin: 0 10px;
+}
+
+.modify {
+    /*display:none;*/
+    background-color: #255625;
+    width: 55%;
+    height: 75%;
+    z-index: 1000;
+    float: left;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>提交数据</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+    <div class="form-group">
+        <label for="table">请选择输入数据的表格:</label>
+        <select id="table" class="form-control" name="table">
+            <option value="recomment">推荐</option>
+            <option value="hundred">百家</option>
+            <option value="local">本地</option>
+            <option value="entertainment">娱乐</option>
+            <option value="society">社会</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="title">请输入新闻标题：</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="新闻标题"/>
+    </div>
+    <div class="form-group">
+        <label for="img">请输入新闻图片地址：</label>
+        <input type="text" class="form-control" id="img" name="img" placeholder="新闻图片"/>
+    </div>
+    <div class="form-group">
+        <label for="content">请输入新闻内容概要：</label>
+        <input type="text" class="form-control" id="content" name="content" placeholder="新闻内容概要"/>
+    </div>
+    <button type="submit" class="btn btn-default" id="but">提交</button>
+</form>
+<script type="text/javascript">
+    function validateForm() {
+        var x = $("#title").val();
+        var url = $("#img").val();
+        if (x == null || x == "") {
+            alert("新闻标题不能为空");
+            return false;
+        }
+        // 新闻标题不能为空
+        else {
+            if (url == null || url == "") {
+                return true;
+            }
+            else {
+                if (!isURL(url)) {
+                    alert("请输入正确的图片地址");
+                    return false;
+                }
+            }
+        }
+        // 图片应为http地址
+    }
+    function isURL(str) {
+        var reg = /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
+        var isurl = reg.test(str);//test(str)方法是js正确表达式内置的对象可以直接调用
+        return isurl;
+    }
+    $("#but").click(function () {
+        $.ajax({
+            url: '/admin/insert',
+            data: {
+                newsType: $("#table").val(),
+                title: $("#title").val(),
+                img: $("#img").val(),
+                content: $("#content").val()
+            },
+            dataType: 'json',
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+                console.log("插入成功");
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+</script>
+</body>
+</html>
